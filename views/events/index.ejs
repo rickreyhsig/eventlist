@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'/>
+</head>
+<body>
+<div class="container">
+  <h1><%= title %></h1>
+  <% for(var i = 0; i < data.length; i++) { %>
+  <h2><%= data[i].title %></h2>
+
+  <p><%= data[i].date %> at
+    <%= data[i].venue.name %>, <%= data[i].venue.address %></p>
+  <% } %>
+</div>
+</body>
 </html>
