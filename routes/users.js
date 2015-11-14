@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-/* uncomment this when mongo is set up
+// uncomment this when mongo is set up
 var userService = require('../services/user-service');
 
 router.get('/', function(req, res, next) {
@@ -16,20 +16,20 @@ router.get('/', function(req, res, next) {
     return res.render('users/index', vm);
   })
 })
-*/
+
 /* GET user page. TODO: show list of users */
-router.get('/', function(req, res) {
+/*router.get('/', function(req, res) {
   var vm = {
     title: 'Users Admin',
     users: [
       {firstname:'Janet'},
-      {firstname:'Frances'},
+      {firstname:'Frances', lastname:'Padua'},
       {firstname:'Johnny'}
     ]
 
 
   }
   res.render('users/index', vm);
-});
+});*/
 
 module.exports = router;

@@ -1,0 +1,52 @@
+//npm install fs --save
+
+/*
+mongo
+
+> use eventlist
+switched to db eventlist
+> db
+eventlist
+> show dbs
+admin  (empty)
+local  0.078GB
+> db
+eventlist
+> db.createCollection('users')
+{ "ok" : 1 }
+> show dbs
+admin      (empty)
+eventlist  0.078GB
+local      0.078GB
+> coll = db.getCollection('users')
+eventlist.users
+> coll.insert({firstname:"Mary", email:"mary@email.com"})
+WriteResult({ "nInserted" : 1 })
+> db.users.insert({firstname:"John", email:"john@email.com"})
+WriteResult({ "nInserted" : 1 })
+> db.users.find()
+{ "_id" : ObjectId("56475e5b1170dac0de9f1fe1"), "firstname" : "Mary", "email" : "mary@email.com" }
+{ "_id" : ObjectId("56475ede1170dac0de9f1fe2"), "firstname" : "John", "email" : "john@email.com" }
+{ "_id" : ObjectId("56475ef91170dac0de9f1fe3"), "firstname" : "Ricardo", "email" : "rick@email.com" }
+> coll.find()
+Same as above
+> coll.update({ role: "admin"}, { $set: {"firstname": "John" }})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> coll.find()
+{ "_id" : ObjectId("56475e5b1170dac0de9f1fe1"), "firstname" : "Mary", "email" : "mary@email.com" }
+{ "_id" : ObjectId("56475ede1170dac0de9f1fe2"), "role" : "admin", "firstname" : "John" }
+{ "_id" : ObjectId("56475ef91170dac0de9f1fe3"), "firstname" : "Ricardo", "email" : "rick@email.com" }
+coll.update({ role: "admin"}, { $set: {"email": "john@email.com" }})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+mongoimport --db taac --collection july2012 lariatData-sgeT-2012-07-02.json --jsonArray
+mongoimport --db dbName --collection collectionName --file fileName.json
+
+-----------------
+FROM the TERMINAL:
+⚡ mongoimport --db eventlist --collection events --file ../jsondata/events.json --jsonArray
+------------------
+
+
+
+*/

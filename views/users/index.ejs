@@ -2,16 +2,33 @@
 <html>
   <head>
     <title><%= title %></title>
+    <style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 5px;
+    }
+    </style>
     <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' />
   </head>
   <body>
     <div class="container">
       <h1><%= title %></h1>
-      <ul>
-      <% for (var i=0; i<users.length; i++) { %>
-        <li><%= users[i].firstname %></li>
-      <% } %>
-      </ul>
+    <table  style="width:100%">
+      <tr>
+        <th> Name </th>
+        <th> Email </th>
+      </tr>
+
+        <% for (var i=0; i<users.length; i++) { %>
+        <tr>
+           <td> <%= users[i].firstname %> </td>
+           <td> <%= users[i].email %> </td>
+        </tr>
+        <% } %>
+    </table>
     </div>
   </body>
 </html>

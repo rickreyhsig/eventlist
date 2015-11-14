@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var fs = require('fs');
+var fs = require('fs'); // Allows to read from filesystem
 
 /* GET events page. TODO: show list of events and add form for a new one */
 router.get('/', function(req, res) {
