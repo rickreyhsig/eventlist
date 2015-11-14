@@ -18,18 +18,16 @@
       <h1><%= title %></h1>
     <table  style="width:100%">
       <tr>
+        <th> ID </th>
         <th> Name </th>
         <th> Email </th>
-        <th> Details </th>
       </tr>
 
-        <% for (var i=0; i<users.length; i++) { %>
         <tr>
-           <td> <%= users[i].firstname %> </td>
-           <td> <%= users[i].email %> </td>
-           <td> <a href="/users/<%= users[i].id %>"> <%= users[i].firstname %> </a> </td>
+           <td> <%= user.id %> </td>
+           <td> <%= user.firstname %> </td>
+           <td> <a href="/users/<%= user.id %>"> <%= user.email %> </a> </td>
         </tr>
-        <% } %>
     </table>
     </div>
   </body>

@@ -5,3 +5,9 @@ exports.getUsers = function(next) {
         next(err, users);
     })
 };
+
+exports.getUser = function(id, next) {
+    User.findById(id, function(err, user){
+        next(err, user);
+    })
+};
